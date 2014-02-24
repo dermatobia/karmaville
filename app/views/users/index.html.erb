@@ -1,0 +1,28 @@
+<h1>KarmaVille's Most Famous</h1>
+<table class="table table-bordered table-striped">
+  <tr>
+    <th>Karma</th>
+    <th>Name</th>
+    <th>Username</th>
+    <th>Email</th>
+  </tr>
+  <% @users.each do |user| %>
+  <tr>
+    <td><i class="icon-star"></i> <%= number_with_delimiter(user.karma_sum) %></td>
+    <td><%= user.full_name %></td>
+    <td><%= user.username %></td>
+    <td><%= mail_to user.email, user.email %></td>
+  </tr>
+  <% end %>
+</table>
+<div class="pagination">
+  <ul>
+    <li><a href="/1">Prev</a></li>
+    <li><a href="/2">1</a></li>
+    <li><a href="/3">2</a></li>
+    <li><a href="/4">3</a></li>
+    <li><a href="/5">4</a></li>
+    <li><a href="/6">5</a></li>
+    <li><a href="/7">Next</a></li>
+  </ul>
+</div
